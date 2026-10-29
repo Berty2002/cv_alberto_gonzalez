@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alberto Hernán González | Especialista en Riesgo, Control e Infosec</title>
+    <style>
+        :root {
+            --primary: #0A192F;
+            --secondary: #172A45;
+            --accent: #38BDF8;
+            --text-main: #CBD5E1;
+            --text-heading: #F8FAFC;
+            --bg-body: #0F172A;
+            --card-bg: #1E293B;
+            --border-color: #334155;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--primary);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        header h1 {
+            color: var(--text-heading);
+            font-size: 28px;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            color: var(--accent);
+            font-size: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            color: var(--text-heading);
+            background-color: var(--secondary);
+            padding: 8px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 5px;
+            border: 1px solid var(--border-color);
+            transition: background 0.3s;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+        }
+
+        section {
+            padding: 30px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            color: var(--text-heading);
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 14.5px;
+        }
+
+        .experience-item, .edu-item {
+            margin-bottom: 25px;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .job-title {
+            color: var(--text-heading);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .job-company {
+            color: var(--accent);
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .skill-card {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-card h3 {
+            color: var(--accent);
+            font-size: 14px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .skill-card p {
+            font-size: 13.5px;
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: #64748B;
+            background-color: var(--secondary);
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            section { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <h1>Alberto Hernán González</h1>
+            <p>Especialista en Riesgo Operativo, Control MCA & Gobernanza | Compliance BCRA, AML & Infosec</p>
+            <div class="contact-links">
+                <a href="mailto:ahgonzalez@gmail.com">✉️ ahgonzalez@gmail.com</a>
+                <a href="tel:+541150988118">📞 +54 11 5098 8118</a>
+                <a href="https://www.linkedin.com/in/alberto-hernan-gonzalez-data-risk/" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </header>
+
+        <!-- PERFIL PROFESIONAL -->
+        <section>
+            <h2>Perfil Profesional</h2>
+            <p>Especialista con más de 20 años de trayectoria integral en el sector financiero corporativo (Citibank) e infraestructura IT (HP), enfocado en Riesgo Operativo, Control Interno (MCA), Gobernanza, Compliance y Seguridad de la Información. Orientado a la optimización de procesos críticos, la automatización analítica de controles y la comunicación estratégica de riesgos bajo normativas del BCRA y estándares internacionales.</p>
+        </section>
+
+        <!-- EXPERIENCIA PROFESIONAL -->
+        <section>
+            <h2>Experiencia Profesional</h2>
+            
+            <div class="experience-item">
+                <div class="job-title">Especialista de Riesgo, Control y Gobernanza</div>
+                <div class="job-company">Citi (Citibank Argentina) | 2016 – 2026</div>
+                <ul>
+                    <li><strong>Gobernanza y Control MCA:</strong> Monitoreo y control continuo de procesos críticos bajo la metodología MCA (Manager's Control Assessment), asegurando el 100% de cumplimiento de políticas globales y del BCRA.</li>
+                    <li><strong>Gestión de Riesgo Operativo:</strong> Investigación y reporte de incidentes de riesgo operativo, diseñando planes de acción correctivos para mitigar vulnerabilidades.</li>
+                    <li><strong>Auditorías & Compliance:</strong> Soporte integral para auditorías internas y externas corporativas, obteniendo calificaciones satisfactorias.</li>
+                    <li><strong>Transformación Ágil:</strong> Implementación de marcos ágiles (Scrum, Kanban) para optimizar los tiempos de respuesta del área.</li>
+                    <li><strong>Reporting Ejecutivo:</strong> Diseño de tableros de control de riesgo y KPIs estratégicos para la alta gerencia.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="experience-item">
+                <div class="job-title">Especialista en Infosec / Seguridad de la Información</div>
+                <div class="job-company">Citi (Citibank Argentina) | 2005 – 2016</div>
+                <ul>
+                    <li><strong>Administración ABM & Perfiles:</strong> Gestión integral del ciclo de vida de usuarios y administración de accesos en aplicaciones críticas.</li>
+                    <li><strong>Resolución de Incidentes:</strong> Diagnóstico y resolución de incidencias de seguridad e identidades, garantizando la continuidad operativa.</li>
+                    <li><strong>Segregación de Funciones (SOD):</strong> Diseño e implementación de controles de acceso alineados a principios SOD.</li>
+                    <li><strong>Liderazgo de Equipo:</strong> Conducción de un equipo de 6 personas, fomentando un ambiente colaborativo y potenciando fortalezas.</li>
+                </ul>
+            </div>
+            <br>
+            <div class="experience-item">
+                <div class="job-title">Soporte Técnico e Infraestructura IT</div>
+                <div class="job-company">HP Argentina | 2000 – 2005</div>
+                <ul>
+                    <li><strong>Soporte Corporativo:</strong> Gestión, migración y mantenimiento de infraestructura IT corporativa (servidores, redes y terminales), asegurando altos niveles de disponibilidad.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- HABILIDADES Y COMPETENCIAS -->
+        <section>
+            <h2>Habilidades Técnicas y Competencias</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Riesgo & Control</h3>
+                    <p>Riesgo Operativo, Control Interno (MCA), Compliance Financiero, Normativa BCRA, AML, Framework CISSP.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Análisis y Eficiencia</h3>
+                    <p>Excel Intermedio, Python (Scripting básico), IA Aplicada (Prompt Engineering) para automatización de tareas.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Gestión & Proyectos</h3>
+                    <p>Project Management, Scrum, Kanban, Jira, Trello, PMBOK, Auditoría y Gobernanza.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Idiomas & Soft Skills</h3>
+                    <p>Español (Nativo), Inglés (A2+ técnico). Resolución de problemas complejos y liderazgo colaborativo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMACIÓN Y CERTIFICACIONES -->
+        <section>
+            <h2>Formación y Certificaciones</h2>
+            <p><strong>Técnico Superior en Programación</strong> — Instituto Técnico Superior TECLAB</p>
+            <p><strong>Técnico Electrónico</strong> — Colegio Secundario República Francesa</p>
+            <p style="margin-top: 15px;"><strong>Cursos y Certificaciones:</strong></p>
+            <ul>
+                <li>Programación Inicial & Data Analytics con Python — Talento Tech (2026)</li>
+                <li>Especialización en Inteligencia Artificial (Prompt Engineering) — TECLAB (2025)</li>
+                <li>Project Management & Metodologías Ágiles (Scrum / Kanban) — TECLAB (2025)</li>
+            </ul>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 Alberto Hernán González. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
