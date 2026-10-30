@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alberto Hernán González | Portfolio Profesional</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f2537',
+                            navyLight: '#1e3a52',
+                            accent: '#2b5b84',
+                            bgLight: '#e1ecf4',
+                            bgDark: '#a3c2d6'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #c4daf0 0%, #a8cbdf 50%, #8baec4 100%);
+            background-attachment: fixed;
+            color: #0f2537;
+        }
+
+        /* Glassmorphism Card Style */
+        .glass-card {
+            background: rgba(244, 248, 252, 0.72);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            box-shadow: 0 8px 32px 0 rgba(15, 37, 55, 0.08);
+        }
+
+        .glass-nav {
+            background: rgba(220, 235, 245, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Smooth Canvas Placement */
+        #node-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative antialiased selection:bg-brand-navy selection:text-white">
+
+    <!-- Canvas para animación de red de nodos -->
+    <canvas id="node-canvas"></canvas>
+
+    <!-- Navegación Superior -->
+    <header class="sticky top-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-lg tracking-tight text-brand-navy flex items-center gap-2">
+                <i data-lucide="shield-check" class="w-5 h-5 text-brand-accent"></i>
+                <span>A. H. González</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-brand-navyLight">
+                <a href="#perfil" class="hover:text-brand-navy transition-colors">Perfil</a>
+                <a href="#experiencia" class="hover:text-brand-navy transition-colors">Experiencia</a>
+                <a href="#formacion" class="hover:text-brand-navy transition-colors">Formación</a>
+                <a href="#competencias" class="hover:text-brand-navy transition-colors">Competencias</a>
+                <a href="#contacto" class="hover:text-brand-navy transition-colors">Contacto</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <a href="https://www.linkedin.com/in/alberto-hernan-gonzalez-data-risk/" target="_blank" rel="noopener noreferrer" 
+                   class="p-2 rounded-lg text-brand-navy hover:bg-white/50 transition-colors" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+        <!-- Hero / Presentación -->
+        <section class="glass-card rounded-2xl p-6 sm:p-10 relative overflow-hidden">
+            <div class="max-w-3xl space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 text-brand-navy text-xs font-medium border border-white/80">
+                    <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+                    20+ años de experiencia corporativa
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-brand-navy leading-tight">
+                    Alberto Hernán González
+                </h1>
+                
+                <p class="text-lg sm:text-xl font-medium text-brand-navyLight">
+                    Especialista en Riesgo Operativo, Control Interno (MCA) & Gobernanza | Compliance BCRA, AML & Infosec
+                </p>
+                
+                <p class="text-sm sm:text-base text-brand-navy/80 leading-relaxed pt-2">
+                    Especializado en la gestión de controles corporativos, mitigación proactiva de riesgos y cumplimiento normativo bancario (Citibank/HP). Potencio procesos de auditoría y gobernanza mediante herramientas analíticas y de automatización.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-3 sm:gap-4 pt-4">
+                    <a href="javascript:void(0)" onclick="window.print()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/80 text-brand-navy border border-white font-medium text-sm hover:bg-white transition-all shadow-sm">
+                        <i data-lucide="download" class="w-4 h-4 text-brand-accent"></i>
+                        <span>Descargar CV PDF</span>
+                    </a>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 text-xs text-brand-navyLight font-medium pt-2">
+                    <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-brand-accent"></i> ahgonzalez1975@gmail.com</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-brand-accent"></i> +54 11 5098 8118</span>
+                    <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-accent"></i> Buenos Aires, Argentina</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Perfil Profesional / Resumen Ejecutivo -->
+        <section id="perfil" class="glass-card rounded-2xl p-6 sm:p-8 space-y-4">
+            <div class="flex items-center gap-3 border-b border-brand-navy/10 pb-3">
+                <div class="p-2 bg-brand-navy/10 rounded-lg text-brand-navy">
+                    <i data-lucide="user-check" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-xl font-bold text-brand-navy">Perfil Profesional</h2>
+            </div>
+            
+            <p class="text-sm sm:text-base text-brand-navy/90 leading-relaxed">
+                Más de 20 años de trayectoria integral en el sector financiero corporativo (Citi) e infraestructura IT (HP), enfocado en <strong>Riesgo Operativo, Control Interno (MCA), Gobernanza, Compliance y Seguridad de la Información</strong>. Orientado a la optimización de procesos críticos, la automatización analítica de controles y la comunicación estratégica de riesgos bajo normativas del BCRA y estándares internacionales.
+            </p>
+            <p class="text-sm sm:text-base text-brand-navy/90 leading-relaxed">
+                Solvencia demostrada para desempeñarme en entornos de alta complejidad, resolver situaciones críticas y colaborar efectivamente con equipos multidisciplinarios. Complemento mi perfil con herramientas de desarrollo y análisis de datos (<strong>Python, Excel Intermedio, IA Aplicada / Prompt Engineering</strong>) enfocadas en la eficiencia operativa y tableros de control.
+            </p>
+        </section>
+
+        <!-- Experiencia Profesional -->
+        <section id="experiencia" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="flex items-center gap-3 border-b border-brand-navy/10 pb-3">
+                <div class="p-2 bg-brand-navy/10 rounded-lg text-brand-navy">
+                    <i data-lucide="briefcase" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-xl font-bold text-brand-navy">Experiencia Profesional</h2>
+            </div>
+
+            <div class="space-y-8">
+                <!-- Puesto 1 -->
+                <div class="relative pl-6 border-l-2 border-brand-accent/40 space-y-2">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-navy border-2 border-white"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <h3 class="text-base sm:text-lg font-bold text-brand-navy">Citi (Citibank Argentina)</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-brand-navy/10 text-brand-navy w-fit">2016 - 2026</span>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-accent">Especialista de Riesgo, Control y Gobernanza</p>
+                    <ul class="text-xs sm:text-sm text-brand-navy/80 space-y-1.5 list-disc list-inside pt-1">
+                        <li><strong>Gobernanza y Control MCA:</strong> Monitoreo y control continuo bajo metodología MCA (Manager's Control Assessment), asegurando 100% de cumplimiento de políticas corporativas globales y BCRA.</li>
+                        <li><strong>Gestión de Riesgo Operativo:</strong> Investigación y reporte de incidentes, diseñando e implementando planes de acción correctivos.</li>
+                        <li><strong>Auditorías & Compliance:</strong> Coordinación y soporte para auditorías internas y externas corporativas, obteniendo calificaciones satisfactorias.</li>
+                        <li><strong>Transformación Ágil:</strong> Implementación de marcos ágiles (Scrum, Kanban) en el equipo de riesgo.</li>
+                        <li><strong>Dashboards Ejecutivos:</strong> Diseño e implementación de tableros de control de riesgo operativo y KPIs estratégicos para alta gerencia.</li>
+                    </ul>
+                </div>
+
+                <!-- Puesto 2 -->
+                <div class="relative pl-6 border-l-2 border-brand-accent/40 space-y-2">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-accent border-2 border-white"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <h3 class="text-base sm:text-lg font-bold text-brand-navy">Citi (Citibank Argentina)</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-brand-navy/10 text-brand-navy w-fit">2005 - 2016</span>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-accent">Especialista en Infosec / Seguridad de la Información</p>
+                    <ul class="text-xs sm:text-sm text-brand-navy/80 space-y-1.5 list-disc list-inside pt-1">
+                        <li><strong>Administración ABM & Perfiles:</strong> Gestión integral del ciclo de vida de usuarios (Altas, Bajas y Modificaciones) y roles de acceso en sistemas críticos.</li>
+                        <li><strong>Segregación de Funciones (SOD):</strong> Diseño e implementación de controles de acceso alineados a principios SOD para prevenir fraudes.</li>
+                        <li><strong>Proyectos de Autenticación:</strong> PM Técnico en la implementación de soluciones de autenticación avanzada (SSO, Token).</li>
+                        <li><strong>Liderazgo de Equipo:</strong> Liderazgo directo de equipo de 6 personas en ambiente colaborativo y orientado a objetivos.</li>
+                    </ul>
+                </div>
+
+                <!-- Puesto 3 -->
+                <div class="relative pl-6 border-l-2 border-brand-accent/40 space-y-2">
+                    <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-brand-bgDark border-2 border-white"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                        <h3 class="text-base sm:text-lg font-bold text-brand-navy">HP Argentina</h3>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-brand-navy/10 text-brand-navy w-fit">2000 - 2005</span>
+                    </div>
+                    <p class="text-sm font-semibold text-brand-accent">Soporte Técnico e Infraestructura IT</p>
+                    <ul class="text-xs sm:text-sm text-brand-navy/80 space-y-1.5 list-disc list-inside pt-1">
+                        <li><strong>Soporte Corporativo:</strong> Gestión, migración y mantenimiento de infraestructura IT corporativa (servidores, redes, equipos cliente).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formación Académica & Certificaciones -->
+        <div id="formacion" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Académica -->
+            <section class="glass-card rounded-2xl p-6 space-y-4">
+                <div class="flex items-center gap-3 border-b border-brand-navy/10 pb-3">
+                    <div class="p-2 bg-brand-navy/10 rounded-lg text-brand-navy">
+                        <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-brand-navy">Formación Académica</h2>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <h3 class="text-sm font-bold text-brand-navy">Técnico Superior en Programación</h3>
+                        <p class="text-xs text-brand-navyLight">Instituto Técnico Superior TECLAB</p>
+                    </div>
+                    <div class="border-t border-brand-navy/5 pt-2">
+                        <h3 class="text-sm font-bold text-brand-navy">Técnico Electrónico</h3>
+                        <p class="text-xs text-brand-navyLight">Colegio Secundario República Francesa</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cursos & Certificaciones -->
+            <section class="glass-card rounded-2xl p-6 space-y-4">
+                <div class="flex items-center gap-3 border-b border-brand-navy/10 pb-3">
+                    <div class="p-2 bg-brand-navy/10 rounded-lg text-brand-navy">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <h2 class="text-lg font-bold text-brand-navy">Especializaciones & Cursos</h2>
+                </div>
+                <ul class="text-xs sm:text-sm text-brand-navy/90 space-y-2">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5"></i>
+                        <span><strong>Programación & Data Analytics con Python:</strong> Talento Tech BA (2026)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5"></i>
+                        <span><strong>IA Aplicada (Prompt Engineering):</strong> Instituto TECLAB (2025)</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-accent shrink-0 mt-0.5"></i>
+                        <span><strong>Project Management & Ágil (Scrum/Kanban):</strong> Instituto TECLAB (2025)</span>
+                    </li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- Habilidades & Competencias -->
+        <section id="competencias" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+            <div class="flex items-center gap-3 border-b border-brand-navy/10 pb-3">
+                <div class="p-2 bg-brand-navy/10 rounded-lg text-brand-navy">
+                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                </div>
+                <h2 class="text-xl font-bold text-brand-navy">Competencias & Herramientas</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Categ 1 -->
+                <div class="p-4 rounded-xl bg-white/50 border border-white/80 space-y-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-brand-accent">Riesgo & Control</h3>
+                    <p class="text-xs text-brand-navy/80 leading-relaxed">Riesgo Operativo, Control MCA, Compliance BCRA, AML, Governance, Marco CISSP, SOD & ABM.</p>
+                </div>
+
+                <!-- Categ 2 -->
+                <div class="p-4 rounded-xl bg-white/50 border border-white/80 space-y-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-brand-accent">Herramientas & Datos</h3>
+                    <p class="text-xs text-brand-navy/80 leading-relaxed">Python (Scripting), Excel Intermedio, SQL, REST APIs (Postman), VS Code, Google Colab.</p>
+                </div>
+
+                <!-- Categ 3 -->
+                <div class="p-4 rounded-xl bg-white/50 border border-white/80 space-y-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-brand-accent">IA & Eficiencia</h3>
+                    <p class="text-xs text-brand-navy/80 leading-relaxed">Prompt Engineering, optimización de flujos de trabajo con IA generativa, automatización de métricas.</p>
+                </div>
+
+                <!-- Categ 4 -->
+                <div class="p-4 rounded-xl bg-white/50 border border-white/80 space-y-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-brand-accent">Gestión & Ágil</h3>
+                    <p class="text-xs text-brand-navy/80 leading-relaxed">Project Management, Scrum, Kanban, Jira, Trello, Confluence, Liderazgo de Equipos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto & Enlaces -->
+        <section id="contacto" class="glass-card rounded-2xl p-6 sm:p-8 space-y-6 text-center">
+            <div class="max-w-xl mx-auto">
+                <h2 class="text-2xl font-bold text-brand-navy">Contacto Profesional</h2>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-2">
+                <a href="mailto:ahgonzalez1975@gmail.com" class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 hover:bg-white text-brand-navy border border-white text-xs sm:text-sm font-medium transition-all shadow-sm group">
+                    <i data-lucide="mail" class="w-4 h-4 text-brand-accent group-hover:scale-110 transition-transform"></i>
+                    <span>ahgonzalez1975@gmail.com</span>
+                </a>
+                <a href="tel:+541150988118" class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 hover:bg-white text-brand-navy border border-white text-xs sm:text-sm font-medium transition-all shadow-sm group">
+                    <i data-lucide="phone" class="w-4 h-4 text-brand-accent group-hover:scale-110 transition-transform"></i>
+                    <span>+54 11 5098 8118</span>
+                </a>
+                <a href="https://www.linkedin.com/in/alberto-hernan-gonzalez-data-risk/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-white/80 hover:bg-white text-brand-navy border border-white text-xs sm:text-sm font-medium transition-all shadow-sm group">
+                    <i data-lucide="linkedin" class="w-4 h-4 text-blue-700 group-hover:scale-110 transition-transform"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-xs text-brand-navy/60 font-medium space-y-1">
+        <p>© 2026 Alberto Hernán González — Portfolio Ejecutivo</p>
+        <p class="text-[11px] text-brand-navy/50">Contacto directo: ahgonzalez1975@gmail.com</p>
+    </footer>
+
+    <!-- Script de Inicialización de Iconos y Animación Canvas -->
+    <script>
+        // Inicializar iconos de Lucide
+        lucide.createIcons();
+
+        // Canvas Interactivo de Red de Nodos con Soporte Touch & Mouse
+        window.onload = function() {
+            const canvas = document.getElementById('node-canvas');
+            const ctx = canvas.getContext('2d');
+
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            let pointer = { x: null, y: null, radius: 150 };
+
+            window.addEventListener('mousemove', (e) => {
+                pointer.x = e.clientX;
+                pointer.y = e.clientY;
+            });
+
+            window.addEventListener('touchmove', (e) => {
+                if (e.touches.length > 0) {
+                    pointer.x = e.touches[0].clientX;
+                    pointer.y = e.touches[0].clientY;
+                }
+            });
+
+            window.addEventListener('mouseleave', () => { pointer.x = null; pointer.y = null; });
+            window.addEventListener('touchend', () => { pointer.x = null; pointer.y = null; });
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            // Configuración de los Nodos (ajustado por resolución)
+            const nodeCount = Math.min(Math.floor((width * height) / 16000), 75);
+            const nodes = [];
+
+            for (let i = 0; i < nodeCount; i++) {
+                nodes.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4,
+                    radius: Math.random() * 2 + 1.5
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+
+                for (let i = 0; i < nodes.length; i++) {
+                    const node = nodes[i];
+
+                    node.x += node.vx;
+                    node.y += node.vy;
+
+                    if (node.x < 0 || node.x > width) node.vx *= -1;
+                    if (node.y < 0 || node.y > height) node.vy *= -1;
+
+                    // Interacción ligera con el mouse / touch
+                    if (pointer.x !== null && pointer.y !== null) {
+                        const dx = pointer.x - node.x;
+                        const dy = pointer.y - node.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < pointer.radius) {
+                            const angle = Math.atan2(dy, dx);
+                            const force = (pointer.radius - dist) / pointer.radius;
+                            node.x -= Math.cos(angle) * force * 1.5;
+                            node.y -= Math.sin(angle) * force * 1.5;
+                        }
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(15, 37, 55, 0.4)';
+                    ctx.fill();
+
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const otherNode = nodes[j];
+                        const dx = otherNode.x - node.x;
+                        const dy = otherNode.y - node.y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(node.x, node.y);
+                            ctx.lineTo(otherNode.x, otherNode.y);
+                            ctx.strokeStyle = `rgba(15, 37, 55, ${0.25 * (1 - dist / 130)})`;
+                            ctx.lineWidth = 0.8;
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        };
+    </script>
+</body>
+</html>
